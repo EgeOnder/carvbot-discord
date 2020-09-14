@@ -1,0 +1,32 @@
+{
+  "name": "carvbot-discord",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "lint": "npx eslint src/",
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EgeOnder/carvbot-discord.git"
+  },
+  "author": "Ege Önder",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/EgeOnder/carvbot-discord/issues"
+  },
+  "homepage": "https://github.com/EgeOnder/carvbot-discord#readme",
+  "dependencies": {
+    "discord.js": "^12.3.1",
+    "dotenv": "^8.2.0",
+    "nodemon": "^2.0.4",
+    "opusscript": "0.0.7",
+    "simple-youtube-api": "^5.2.1",
+    "ytdl-core": "^3.2.2"
+  },
+  "devDependencies": {
+    "eslint": "^7.9.0"
+  }
+}
