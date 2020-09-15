@@ -31,4 +31,6 @@ A simple music bot for Discord channels. (Only Turkish)
 ## Installation
  - Clone the repository with ```git clone https://github.com/EgeOnder/carvbot-discord.git```
  - Then download all node dependencies with ```npm install```
+ - Create a file named ```.env``` inside the repository folder.
+ - Enter your environment variables. (__BOT_TOKEN=<token>__ and __GOOGLE_API_KEY=<key>__)
  - When ready, start the bot with ```npm run dev```

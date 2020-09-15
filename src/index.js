@@ -129,6 +129,13 @@ client.on('message', async (message) => {
         
         prefix = args[1].toString();
         message.channel.send(`:white_check_mark: Yeni prefix **${args[1]}** olarak ayarlandı!`);
+    } else if (message.content.startsWith(`${prefix}kaynak`) || message.content.startsWith(`${prefix}source`)) {
+        const sourceCodeEmbed = new Discord.MessageEmbed()
+            .setColor('#00ff00')
+            .addField('**Kaynak Kodu**', 'https://ege.works/carvbot-discord')
+            .setTimestamp();
+
+        message.channel.send(sourceCodeEmbed);
     } else if (message.content.startsWith(`${prefix}yardım`) || message.content.startsWith(`${prefix}help`)) {
         const helpEmbed = new Discord.MessageEmbed()
             .setColor('#00ff00')
@@ -193,6 +200,7 @@ async function handleVideo(video, message, voiceChannel, playlist = false) {
         if (playlist) return undefined;
         else {
             const queueAddedEmbed = new Discord.MessageEmbed()
+                .setColor('#00ff00')
                 .setTitle(':arrow_forward: Sıraya eklendi:')
                 .setURL(song.url)
                 .addField(`**${song.title}**`, song.url)
@@ -230,6 +238,7 @@ function play(guild, song) {
         dispatcher.setVolumeLogarithmic(serverQueue.volume / 5);
 
         const nowPlayingEmbed = new Discord.MessageEmbed()
+            .setColor('#00ff00')
             .setTitle(':musical_note: Şu anda çalan:')
             .setURL(song.url)
             .addField(`**${song.title}**`, song.url)
@@ -255,6 +264,7 @@ function play(guild, song) {
         dispatcher.setVolumeLogarithmic(serverQueue.volume / 5);
 
         const nowPlayingEmbed = new Discord.MessageEmbed()
+            .setColor('#00ff00')
             .setTitle(':musical_note: Şu anda çalan:')
             .setURL(song[0].url)
             .addField(`**${song[0].title}**`, song[0].url)
