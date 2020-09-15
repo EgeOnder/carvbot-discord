@@ -16,17 +16,17 @@ A simple music bot for Discord channels. (Only Turkish)
  - ```npm start``` (Regular node start script)
 
 ## Bot Commands
- - ```oynat``` or ```play``` (For playing music)
- - ```atla``` or ```geç``` or ```skip``` (For skipping the current track)
- - ```durdur``` or ```stop``` (For stopping the track)
- - ```duraklat``` or ```pause``` (For pausing the current track)
- - ```devam``` or ```resume``` (For resuming the paused track)
- - ```sıra``` or ```queue``` (Shows the current queue)
+ - ```play``` (For playing music)
+ - ```skip``` (For skipping the current track)
+ - ```stop``` (For stopping the track)
+ - ```pause``` (For pausing the current track)
+ - ```resume``` (For resuming the paused track)
+ - ```queue``` (Shows the current queue)
  - ```loop``` (Enables/disables the loop mode)
- - ```ses``` or ```volume``` (For adjusting the volume)
- - ```çalan``` or ```nowplaying``` or ```np``` (Shows the currently playing track)
- - ```prefix``` (For setting the prefix)
- - ```yardım``` or ```help``` (Shows all the commands)
+ - ```volume``` (For adjusting the volume)
+ - ```nowplaying``` (Shows the currently playing track)
+ - ```source``` (For accessing the source code)
+ - ```help``` (Shows all the commands)
 
 ## Installation
  - Clone the repository with ```git clone https://github.com/EgeOnder/carvbot-discord.git```
