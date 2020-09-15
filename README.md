@@ -11,8 +11,8 @@ A simple music bot for Discord channels. (Only Turkish)
  - **eslint** (For development purposes)
 
 ## Scripts
- - ```npm run lint``` (Checking syntax errors with eslint)
- - ```npm run dev``` (Starting the app with nodemon)
+ - ```npm run lint``` (Checks syntax errors with eslint)
+ - ```npm run dev``` (Starts the app with nodemon)
  - ```npm start``` (Regular node start script)
 
 ## Bot Commands
@@ -22,8 +22,13 @@ A simple music bot for Discord channels. (Only Turkish)
  - ```duraklat``` or ```pause``` (For pausing the current track)
  - ```devam``` or ```resume``` (For resuming the paused track)
  - ```sıra``` or ```queue``` (Shows the current queue)
- - ```loop`` (Enables/disables the loop mode)
+ - ```loop``` (Enables/disables the loop mode)
  - ```ses``` or ```volume``` (For adjusting the volume)
  - ```çalan``` or ```nowplaying``` or ```np``` (Shows the currently playing track)
  - ```prefix``` (For setting the prefix)
  - ```yardım``` or ```help``` (Shows all the commands)
+
+## Installation
+ - Clone the repository with ```git clone https://github.com/EgeOnder/carvbot-discord.git```
+ - Then download all node dependencies with ```npm install```
+ - When ready, start the bot with ```npm run dev```
