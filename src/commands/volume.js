@@ -3,6 +3,7 @@ const { MessageEmbed } = require('discord.js');
 module.exports.run = async (client, message, args, url, searchString, queue, serverQueue) => {
 	if (!message.member.voice.channel) return message.channel.send(':x: Bu komutu kullanmak için ses kanalında olmalısınız.');
 	if (!serverQueue) return message.channel.send(':x: Zaten bir şey çalmıyor.');
+	if (message.member.voice.channel != serverQueue.voiceChannel) return message.channel.send(':x: Bu komutu kullanmak için bot ile aynı kanalda olmalısınız.');
 	if (!args[1]) return message.channel.send(`Şu anki ses seviyesi: ${serverQueue.volume}`);
 	if (isNaN(args[1])) return message.channel.send(':x: Lütfen geçerli bir değer giriniz.');
 	serverQueue.volume = args[1];

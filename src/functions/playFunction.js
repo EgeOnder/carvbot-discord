@@ -15,6 +15,10 @@ function play (guild, song, queue) {
 			.on('finish', () => {
 				if (serverQueue.songs.length > 1) {
 					serverQueue.songs.shift();
+				} else {
+					serverQueue.voiceChannel.leave();
+					queue.delete(guild.id);
+					return;
 				}
 				play(guild, serverQueue.songs, queue);
 			})
@@ -33,12 +37,15 @@ function play (guild, song, queue) {
             
 		serverQueue.textChannel.send(nowPlayingEmbed);
 	} else {
-		console.log(song[0]);
 		const dispatcher = serverQueue.connection.play(ytdl(song[0].url))
 			.on('finish', () => {
 				if (!serverQueue.loop) {
 					if (serverQueue.songs.length > 1) {
 						serverQueue.songs.shift();
+					} else {
+						serverQueue.voiceChannel.leave();
+						queue.delete(guild.id);
+						return;
 					}
 				}
 

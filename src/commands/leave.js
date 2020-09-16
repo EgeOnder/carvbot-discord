@@ -2,21 +2,21 @@ const { MessageEmbed } = require('discord.js');
 
 module.exports.run = async (client, message, args, url, searchString, queue, serverQueue) => {
 	if (!message.member.voice.channel) return message.channel.send(':x: Bu komutu kullanmak için ses kanalında olmalısınız.');
-	if (!serverQueue) return message.channel.send(':x: Zaten bir şey çalmıyor.');
+	if (!serverQueue) return message.channel.send(':x: Zaten bir şarkı çalmıyor.');
 	if (message.member.voice.channel != serverQueue.voiceChannel) return message.channel.send(':x: Bu komutu kullanmak için bot ile aynı kanalda olmalısınız.');
-	if (!serverQueue.playing) return message.channel.send(':x: Müzik zaten duraklatılmış.');
-	serverQueue.playing = false;
-    serverQueue.connection.dispatcher.pause();
-    
-	const pauseEmbed = new MessageEmbed()
-        .setColor('#00ff00')    
-        .setTitle(':pause_button: Müzik duraklatılıyor.')
-        .setTimestamp();
-        
-	message.channel.send(pauseEmbed);
+	serverQueue.songs = [];
+	serverQueue.voiceChannel.leave();
+	queue.delete(message.guild.id);
+
+	const stopEmbed = new MessageEmbed()
+		.setColor('#00ff00')	
+		.setTitle(':octagonal_sign: Müzik kanalından çıkıldı.')
+		.setTimestamp();
+
+	message.channel.send(stopEmbed);
 	return undefined;
 };
 
 module.exports.help = {
-	name: 'pause',
+	name: 'leave',
 };
