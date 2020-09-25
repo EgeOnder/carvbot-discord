@@ -5,7 +5,7 @@ module.exports.run = async (client, message, args, url, searchString, queue, ser
 	
 	const queueEmbed = new MessageEmbed()
 		.setColor('#00ff00')
-		.addField(':arrow_forward: Sıradaki Parçalar', serverQueue.songs.map(song => `**~** ${song.title}`).join('\n'))
+		.addField(':arrow_forward: Sıradaki Parçalar', serverQueue.songs.map(song => `**${(serverQueue.songs.indexOf(song) + 1)}.** ${song.title}`).join('\n'))
 		.addField(':play_pause: Çalan', serverQueue.songs[0].title)
 		.setTimestamp();
 
