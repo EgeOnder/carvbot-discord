@@ -5,7 +5,14 @@ const youtube = new YouTube(process.env.GOOGLE_API_KEY);
 
 module.exports.run = async (client, message, args, url, searchString, queue, serverQueue) => {
 	const voiceChannel = message.member.voice.channel;
-	if (!voiceChannel) return message.channel.send(':x: Bu komutu kullanmak için ses kanalında olmalısınız.');
+	if (!message.member.voice.channel) {
+		const voiceChannelEmbed = new MessageEmbed()
+			.setColor('#ff0000')
+			.setTitle(':x: Bu komutu kullanmak için ses kanalında olmalısınız.')
+			.setTimestamp();
+
+		return message.channel.send(voiceChannelEmbed);
+	}
 	const permissions = voiceChannel.permissionsFor(message.client.user);
 	if (!permissions.has('CONNECT')) return message.channel.send(':x: Bulunduğun kanala katılmak için yetkim yok!');
 	if (!permissions.has('SPEAK')) return message.channel.send(':x: Bulunduğun kanalda konuşmak için yetkim yok!');
@@ -27,7 +34,12 @@ module.exports.run = async (client, message, args, url, searchString, queue, ser
 				var videos = await youtube.searchVideos(searchString, 1);
 				var video = await youtube.getVideoByID(videos[0].id);
 			} catch (error) {
-				return message.channel.send(':x: Arama kriterlerinde bir sonuç bulamadım!');
+				const notFoundEmbed = new MessageEmbed()
+					.setColor('#ff0000')
+					.setTitle(':x: Arama kriterlerinde bir sonuç bulamadım!')
+					.setTimestamp();
+			
+				return message.channel.send(notFoundEmbed);
 			}
 		}
 		return handleVideo(video, message, voiceChannel, false, queue);

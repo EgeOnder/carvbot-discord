@@ -12,6 +12,7 @@ module.exports.run = async (client, message, args, url, searchString, queue, ser
 			{ name: `${prefix}skip`, value: 'Çalan şarkıyı atlayabilirsin.' },
 			{ name: `${prefix}stop`, value: 'Tüm sıradaki şarkıları iptal edebilirsin.' },
 			{ name: `${prefix}pause`, value: 'Çalan şarkıyı duraklatabilirsin.' },
+			{ name: `${prefix}remove <sayı>`, value: 'Sıradaki bir şarkıyı silebilirsin.' },
 			{ name: `${prefix}resume`, value: 'Duraklatılmış şarkıyı yeniden oynatabilirsin.' },
 			{ name: `${prefix}leave`, value: 'Carvbot\'u kanaldan atabilirsin.' },
 			{ name: `${prefix}queue`, value: 'Şarkı sırasına bakabilirsin.' },
@@ -27,6 +28,5 @@ module.exports.run = async (client, message, args, url, searchString, queue, ser
 };
 
 module.exports.help = {
-    name: 'help',
-    description: 'Bu menüyü açabilirsin.'
+    name: 'help'
 };

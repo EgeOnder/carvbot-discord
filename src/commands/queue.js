@@ -1,7 +1,14 @@
 const { MessageEmbed } = require('discord.js');
 
 module.exports.run = async (client, message, args, url, searchString, queue, serverQueue) => {
-	if (!serverQueue) return message.channel.send(':x: Şu anda bir şey çalmıyor.');
+	if (!serverQueue) {
+		const noSongsEmbed = new MessageEmbed()
+			.setColor('#ff0000')
+			.setTitle(':x: Zaten bir şarkı çalmıyor.')
+			.setTimestamp();
+
+		return message.channel.send(noSongsEmbed);
+	}
 	
 	const queueEmbed = new MessageEmbed()
 		.setColor('#00ff00')

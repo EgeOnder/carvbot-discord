@@ -20,6 +20,7 @@ A simple music bot for Discord channels. (Only Turkish)
  - ```skip``` (For skipping the current track)
  - ```stop``` (For stopping the track)
  - ```pause``` (For pausing the current track)
+ - ```remove``` (For removing a track from the queue)
  - ```resume``` (For resuming the paused track)
  - ```queue``` (Shows the current queue)
  - ```loop``` (Enables/disables the loop mode)
@@ -32,5 +33,5 @@ A simple music bot for Discord channels. (Only Turkish)
  - Clone the repository with ```git clone https://github.com/EgeOnder/carvbot-discord.git```
  - Then download all node dependencies with ```npm install```
  - Create a file named ```.env``` inside the repository folder.
- - Enter your environment variables. (__BOT_TOKEN=<token>__ and __GOOGLE_API_KEY=<key>__)
+ - Enter your environment variables. (__BOT_TOKEN=(token)__ and __GOOGLE_API_KEY=(key)__)
  - When ready, start the bot with ```npm run dev```

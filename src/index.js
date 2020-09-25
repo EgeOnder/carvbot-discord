@@ -50,10 +50,20 @@ client.on('message', async (message) => {
 	if (message.content.startsWith(prefix)) {
 		if (commands.length > 0) {
 			if (!commands.includes(message.content.split(' ')[0].split(prefix)[1])) {
-				message.channel.send(`:x: Komutunu tam olarak anlayamadım. Yardım almak için **${prefix}help**`);
+				const cannotUnderstandEmbed = new Discord.MessageEmbed()
+					.setColor('#ff0000')
+					.setTitle(`:x: Komutunu tam olarak anlayamadım. Yardım almak için **${prefix}help**`)
+					.setTimestamp();
+				
+				return message.channel.send(cannotUnderstandEmbed);
 			}
 		} else {
-			message.channel.send(':x: Herhangi bir komut bulamadım.');
+			const noCommandFoundEmbed = new Discord.MessageEmbed()
+				.setColor('#ff0000')
+				.setTitle(':x: Herhangi bir komut bulamadım.')
+				.setTimestamp();
+
+			return message.channel.send(noCommandFoundEmbed);
 		}
 	}
 
