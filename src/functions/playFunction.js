@@ -13,13 +13,16 @@ function play (guild, song, queue) {
 	if (!song[0]) {
 		const dispatcher = serverQueue.connection.play(ytdl(song.url))
 			.on('finish', () => {
-				if (serverQueue.songs.length > 1) {
-					serverQueue.songs.shift();
-				} else {
-					serverQueue.voiceChannel.leave();
-					queue.delete(guild.id);
-					return;
+				if (!serverQueue.loop) {
+					if (serverQueue.songs.length > 1) {
+						serverQueue.songs.shift();
+					} else {
+						serverQueue.voiceChannel.leave();
+						queue.delete(guild.id);
+						return;
+					}
 				}
+				
 				play(guild, serverQueue.songs, queue);
 			})
 			.on('error', (error) => {
