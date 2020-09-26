@@ -19,6 +19,7 @@ module.exports.run = async (client, message, args, url, searchString, queue, ser
 			{ name: `${prefix}loop`, value: 'Sıradakileri döngüye alabilirsin.' },
 			{ name: `${prefix}volume <seviye>`, value: 'Ses seviyesini ayarlayabilirsin.' },
 			{ name: `${prefix}nowplaying`, value: 'Çalan şarkıyı görebilirsin.' },
+			{ name: `${prefix}lyrics`, value: 'Şarkı sözü aratabilirsin.' },
 			{ name: `${prefix}source`, value: 'Carvbot\'un kaynak kodlarını görebilirsin.' },
 			{ name: `${prefix}help`, value: 'Bu menüyü açabilirsin.' }
 		)

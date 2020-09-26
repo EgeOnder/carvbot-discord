@@ -26,6 +26,7 @@ A simple music bot for Discord channels. (Only Turkish)
  - ```loop``` (Enables/disables the loop mode)
  - ```volume``` (For adjusting the volume)
  - ```nowplaying``` (Shows the currently playing track)
+ - ```lyrics``` (Fetch lyrics from Genius API)
  - ```source``` (For accessing the source code)
  - ```help``` (Shows all the commands)
 

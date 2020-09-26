@@ -21,6 +21,7 @@
   "dependencies": {
     "discord.js": "^12.3.1",
     "dotenv": "^8.2.0",
+    "genius-lyrics-api": "^3.0.3",
     "nodemon": "^2.0.4",
     "opusscript": "0.0.7",
     "simple-youtube-api": "^5.2.1",
