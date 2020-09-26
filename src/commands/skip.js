@@ -25,11 +25,23 @@ module.exports.run = async (client, message, args, url, searchString, queue, ser
 	} if (serverQueue.songs.length == 1 && !serverQueue.loop) {
 		serverQueue.songs = [];
 		play(message.guild, undefined, queue);
-		message.channel.send(':play_pause: Şarkı atlandı!');
+
+		const skipSongEmbed = new MessageEmbed()
+			.setColor('#ff0000')
+			.setTitle(':play_pause: Şarkı atlandı!')
+			.setTimestamp();
+
+		message.channel.send(skipSongEmbed);
 		return undefined;
 	} else {
 		serverQueue.connection.dispatcher.end();
-		message.channel.send(':play_pause: Şarkı atlandı!');
+		
+		const skipSongEmbed = new MessageEmbed()
+			.setColor('#ff0000')
+			.setTitle(':play_pause: Şarkı atlandı!')
+			.setTimestamp();
+
+		message.channel.send(skipSongEmbed);
 		return undefined;
 	}
 };

@@ -22,7 +22,7 @@ function play (guild, song, queue) {
 				}
 				play(guild, serverQueue.songs, queue);
 			})
-			.on('error', () => {
+			.on('error', (error) => {
 				console.log(error);
 			});
 
@@ -51,7 +51,7 @@ function play (guild, song, queue) {
 
 				play(guild, serverQueue.songs, queue);
 			})
-			.on('error', () => {
+			.on('error', (error) => {
 				console.log(error);
 			});
 
