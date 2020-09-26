@@ -21,13 +21,22 @@ module.exports.run = async (client, message, args, url, searchString, queue, ser
 
 	try {
 		getSong(options).then((song) => {
+			if (song.lyrics >= 2048) {
+				const tooLongEmbed = new MessageEmbed()
+					.setColor('#ff0000')
+					.setTitle(':x: Şarkı sözü çok uzun olduğundan alınamadı.')
+					.setTimestamp();
+
+				return message.channel.send(tooLongEmbed);
+			}
+
 			const lyricsEmbed = new MessageEmbed()
-			.setColor('#00ff00')
-			.setTitle('Şarkı Sözleri')
-			.setURL(song.url)
-			.setThumbnail(song.albumArt)
-			.setDescription(song.lyrics)
-			.setTimestamp();
+				.setColor('#00ff00')
+				.setTitle('Şarkı Sözleri')
+				.setURL(song.url)
+				.setThumbnail(song.albumArt)
+				.setDescription(song.lyrics)
+				.setTimestamp();
 
 			return message.channel.send(lyricsEmbed);
 		});
