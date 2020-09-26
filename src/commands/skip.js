@@ -1,4 +1,5 @@
 const { play } = require('../functions/playFunction');
+const { MessageEmbed } = require('discord.js');
 
 module.exports.run = async (client, message, args, url, searchString, queue, serverQueue) => {
 	if (!message.member.voice.channel) {
