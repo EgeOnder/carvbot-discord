@@ -21,10 +21,10 @@ module.exports.run = async (client, message, args, url, searchString, queue, ser
 
 	try {
 		getSong(options).then((song) => {
-			if (song.lyrics >= 2048) {
+			if (song.lyrics.length >= 2048) {
 				const tooLongEmbed = new MessageEmbed()
 					.setColor('#ff0000')
-					.setTitle(':x: Şarkı sözü çok uzun olduğundan alınamadı.')
+					.setTitle(':x: Şarkı sözü çok uzun olduğundan bulunamadı.')
 					.setTimestamp();
 
 				return message.channel.send(tooLongEmbed);
