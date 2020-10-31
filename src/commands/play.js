@@ -1,5 +1,6 @@
 const YouTube = require('simple-youtube-api');
 const { handleVideo } = require('../functions/handleVideo');
+const { MessageEmbed } = require('discord.js');
 
 const youtube = new YouTube(process.env.GOOGLE_API_KEY);
 
