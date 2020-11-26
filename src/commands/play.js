@@ -40,6 +40,7 @@ module.exports.run = async (client, message, args, url, searchString, queue, ser
 					.setTitle(':x: Arama kriterlerinde bir sonuç bulamadım!')
 					.setTimestamp();
 			
+				console.log(error);
 				return message.channel.send(notFoundEmbed);
 			}
 		}
