@@ -32,7 +32,7 @@ fs.readdir('./src/commands/', (error, files) => {
 
 client.on('ready', () => {
 	console.log('Carvbot is ready!');
-    client.user.setActivity(`${prefix}help`, { type: 'LISTENING' });
+    	client.user.setActivity(`${prefix}help`, { type: 'LISTENING' });
 });
 
 client.on('message', async (message) => {
