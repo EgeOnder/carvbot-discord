@@ -24,7 +24,8 @@ module.exports.run = async (client, message, args, url, searchString, queue, ser
 			if (song.lyrics.length >= 2048) {
 				const tooLongEmbed = new MessageEmbed()
 					.setColor('#ff0000')
-					.setTitle(':x: Şarkı sözü çok uzun olduğundan bulunamadı.')
+					.setTitle(':x: Şarkı sözü çok uzun olduğundan bağlantıya tıklayın.')
+					.setDescription(song.url)
 					.setTimestamp();
 
 				return message.channel.send(tooLongEmbed);
