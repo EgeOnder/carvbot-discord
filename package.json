@@ -27,7 +27,7 @@
     "nodemon": "^2.0.6",
     "opusscript": "0.0.7",
     "simple-youtube-api": "^5.2.1",
-    "ytdl-core": "^4.2.1"
+    "ytdl-core": "^4.5.0"
   },
   "devDependencies": {
     "eslint": "^7.14.0"
