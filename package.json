@@ -19,15 +19,15 @@
   },
   "homepage": "https://github.com/EgeOnder/carvbot-discord#readme",
   "dependencies": {
+    "axios": "^0.21.1",
     "discord.js": "^12.5.1",
     "dotenv": "^8.2.0",
-    "genius-lyrics-api": "^3.0.3",
+    "genius-lyrics-api": "^3.0.6",
     "ini": "^2.0.0",
     "nodemon": "^2.0.6",
     "opusscript": "0.0.7",
     "simple-youtube-api": "^5.2.1",
-    "ytdl-core": "^4.2.1",
-    "axios": "^0.21.1"
+    "ytdl-core": "^4.2.1"
   },
   "devDependencies": {
     "eslint": "^7.14.0"
