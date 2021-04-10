@@ -40,7 +40,10 @@ function play (guild, song, queue) {
             
 		serverQueue.textChannel.send(nowPlayingEmbed);
 	} else {
-		const dispatcher = serverQueue.connection.play(ytdl(song[0].url))
+		const dispatcher = serverQueue.connection.play(ytdl(song[0].url, {
+			quality: 'highestaudio',
+			highWaterMark: 1 << 25
+		}))
 			.on('finish', () => {
 				if (!serverQueue.loop) {
 					if (serverQueue.songs.length > 1) {
