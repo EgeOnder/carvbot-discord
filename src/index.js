@@ -1,8 +1,23 @@
-const Discord = require('discord.js');
+const { Client, Intents } = require('discord.js');
 const fs = require('fs');
 require('dotenv').config();
 
-const client = new Discord.Client({ disableEveryone: true });
+const intents = new Intents();
+intents.add(
+	Intents.FLAGS.GUILDS,
+	Intents.FLAGS.GUILD_BANS,
+	Intents.FLAGS.DIRECT_MESSAGES,
+	Intents.FLAGS.DIRECT_MESSAGE_REACTIONS,
+	Intents.FLAGS.DIRECT_MESSAGE_TYPING,
+	Intents.FLAGS.GUILD_MESSAGE_TYPING,
+	Intents.FLAGS.GUILD_PRESENCES,
+	Intents.FLAGS.GUILD_MESSAGE_TYPING,
+	Intents.FLAGS.GUILD_MESSAGES,
+	Intents.FLAGS.GUILD_INVITES,
+	Intents.FLAGS.GUILD_INTEGRATIONS
+);
+
+const client = new Client({ disableEveryone: true, intents: intents });
 const queue = new Map();
 const prefix = process.env.PREFIX || '-';
 
@@ -13,7 +28,7 @@ let commands = [];
 fs.readdir('./src/commands/', (error, files) => {
 	if (error) console.error(error);
 
-	const jsfiles = files.filter(f => f.split('.').pop() == 'js');
+	const jsfiles = files.filter((f) => f.split('.').pop() == 'js');
 	if (jsfiles.length <= 0) return console.log('No commands to load!');
 
 	console.log(`Loading ${jsfiles.length} command(s).`);
@@ -32,7 +47,7 @@ fs.readdir('./src/commands/', (error, files) => {
 
 client.on('ready', () => {
 	console.log('Carvbot is ready!');
-    	client.user.setActivity(`${prefix}help`, { type: 'LISTENING' });
+	client.user.setActivity(`${prefix}help`, { type: 'LISTENING' });
 });
 
 client.on('message', async (message) => {
@@ -44,17 +59,34 @@ client.on('message', async (message) => {
 	const url = args[1] ? args[1].replace(/<(._)/g, '$1') : '';
 	const serverQueue = queue.get(message.guild.id);
 
-	const commandFile = client.commands.get(message.content.split(' ')[0].slice(prefix.length));
-	if (commandFile) commandFile.run(client, message, args, url, searchString, queue, serverQueue);
+	const commandFile = client.commands.get(
+		message.content.split(' ')[0].slice(prefix.length)
+	);
+	if (commandFile)
+		commandFile.run(
+			client,
+			message,
+			args,
+			url,
+			searchString,
+			queue,
+			serverQueue
+		);
 
 	if (message.content.startsWith(prefix)) {
 		if (commands.length > 0) {
-			if (!commands.includes(message.content.split(' ')[0].split(prefix)[1])) {
+			if (
+				!commands.includes(
+					message.content.split(' ')[0].split(prefix)[1]
+				)
+			) {
 				const cannotUnderstandEmbed = new Discord.MessageEmbed()
 					.setColor('#ff0000')
-					.setTitle(`:x: Komutunu tam olarak anlayamadım. Yardım almak için **${prefix}help**`)
+					.setTitle(
+						`:x: Komutunu tam olarak anlayamadım. Yardım almak için **${prefix}help**`
+					)
 					.setTimestamp();
-				
+
 				return message.channel.send(cannotUnderstandEmbed);
 			}
 		} else {

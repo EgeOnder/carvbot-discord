@@ -1,40 +1,40 @@
 {
-  "name": "carvbot-discord",
-  "version": "1.0.0",
-  "description": "",
-  "main": "src/index.js",
-  "scripts": {
-    "lint": "npx eslint src/",
-    "start": "node src/index.js",
-    "dev": "nodemon src/index.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/EgeOnder/carvbot-discord.git"
-  },
-  "author": "Ege Önder",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/EgeOnder/carvbot-discord/issues"
-  },
-  "homepage": "https://github.com/EgeOnder/carvbot-discord#readme",
-  "dependencies": {
-    "axios": "^0.21.4",
-    "css-what": "^5.0.1",
-    "discord.js": "^13.1.0",
-    "dotenv": "^10.0.0",
-    "genius-lyrics-api": "^3.2.0",
-    "glob-parent": "^6.0.1",
-    "ini": "^2.0.0",
-    "lodash": "^4.17.21",
-    "nodemon": "^2.0.13",
-    "normalize-url": "^7.0.2",
-    "opusscript": "0.0.8",
-    "simple-youtube-api": "^5.2.1",
-    "ws": "^8.2.2",
-    "ytdl-core": "^4.9.1"
-  },
-  "devDependencies": {
-    "eslint": "^7.32.0"
-  }
+	"name": "carvbot-discord",
+	"version": "1.0.0",
+	"description": "",
+	"main": "src/index.js",
+	"scripts": {
+		"lint": "npx eslint src/",
+		"start": "node src/index.js",
+		"dev": "nodemon src/index.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/EgeOnder/carvbot-discord.git"
+	},
+	"author": "Ege Önder",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/EgeOnder/carvbot-discord/issues"
+	},
+	"homepage": "https://github.com/EgeOnder/carvbot-discord#readme",
+	"dependencies": {
+		"axios": "^0.21.4",
+		"css-what": "^5.0.1",
+		"discord.js": "^13.1.0",
+		"dotenv": "^10.0.0",
+		"genius-lyrics-api": "^3.2.0",
+		"glob-parent": "^6.0.1",
+		"ini": "^2.0.0",
+		"lodash": "^4.17.21",
+		"nodemon": "^2.0.13",
+		"normalize-url": "^7.0.2",
+		"opusscript": "0.0.8",
+		"simple-youtube-api": "^5.2.1",
+		"ws": "^8.2.2",
+		"ytdl-core": "^4.9.1"
+	},
+	"devDependencies": {
+		"eslint": "^7.32.0"
+	}
 }
