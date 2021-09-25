@@ -1,23 +1,23 @@
-const { Client, Intents } = require('discord.js');
+const Discord = require('discord.js');
 const fs = require('fs');
 require('dotenv').config();
 
-const intents = new Intents();
+const intents = new Discord.Intents();
 intents.add(
-	Intents.FLAGS.GUILDS,
-	Intents.FLAGS.GUILD_BANS,
-	Intents.FLAGS.DIRECT_MESSAGES,
-	Intents.FLAGS.DIRECT_MESSAGE_REACTIONS,
-	Intents.FLAGS.DIRECT_MESSAGE_TYPING,
-	Intents.FLAGS.GUILD_MESSAGE_TYPING,
-	Intents.FLAGS.GUILD_PRESENCES,
-	Intents.FLAGS.GUILD_MESSAGE_TYPING,
-	Intents.FLAGS.GUILD_MESSAGES,
-	Intents.FLAGS.GUILD_INVITES,
-	Intents.FLAGS.GUILD_INTEGRATIONS
+	Discord.Intents.FLAGS.GUILDS,
+	Discord.Intents.FLAGS.GUILD_BANS,
+	Discord.Intents.FLAGS.DIRECT_MESSAGES,
+	Discord.Intents.FLAGS.DIRECT_MESSAGE_REACTIONS,
+	Discord.Intents.FLAGS.DIRECT_MESSAGE_TYPING,
+	Discord.Intents.FLAGS.GUILD_MESSAGE_TYPING,
+	Discord.Intents.FLAGS.GUILD_PRESENCES,
+	Discord.Intents.FLAGS.GUILD_MESSAGE_TYPING,
+	Discord.Intents.FLAGS.GUILD_MESSAGES,
+	Discord.Intents.FLAGS.GUILD_INVITES,
+	Discord.Intents.FLAGS.GUILD_INTEGRATIONS
 );
 
-const client = new Client({ disableEveryone: true, intents: intents });
+const client = new Discord.Client({ disableEveryone: true, intents: intents });
 const queue = new Map();
 const prefix = process.env.PREFIX || '-';
 
