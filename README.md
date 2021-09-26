@@ -1,3 +1,6 @@
+# IMPORTANT!
+This code is **DEPRECATED!** Since discord.js library updated itself, I'm too lazy to write the bot all over again. So if you're not from the past, **DO NOT** use this code. It won't work.
+
 # Carvbot Discord
 A simple music bot for Discord channels. (Only Turkish)
 
